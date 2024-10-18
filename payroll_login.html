@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll System Login</title>
+    <link rel="stylesheet" href="payroll_login.css">
+</head>
+<body>
+    <h1 class="heading">Cavendish University Payroll System</h1>
+    <div class="container">
+        <div class="form-container" id="login-form">
+            <h2>Login</h2>
+            <form action="payroll_login.php" method="post" onsubmit="return validateLoginForm()">
+                <div class="input-group">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <div id="login-error-message"></div>
+            </form>
+            <p>Don't have an account? <span class="toggle-form" onclick="showRegister()">Create Account</span></p>
+        </div>
+
+        <div class="form-container hidden" id="register-form">
+            <h2>Create Account</h2>
+            <form action="register.php" method="post" onsubmit="return validateRegisterForm()">
+                <div class="input-group">
+                    <label for="register-username">Username</label>
+                    <input type="text" id="register-username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" required>
+                </div>
+                <button type="submit" class="register-btn">Create Account</button>
+                <div id="register-error-message"></div>
+            </form>
+            <p>Already have an account? <span class="toggle-form" onclick="showLogin()">Login</span></p>
+        </div>
+    </div>
+    <script src="payroll_login.js"></script>
+</body>
+</html>
